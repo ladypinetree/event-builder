@@ -11,6 +11,7 @@ Router.map(function () {
   this.route('change-password');
   this.route('users');
   this.route('events');
+  this.route('event', { path: '/events/:event_id' });
 });
 
 export default Router;
