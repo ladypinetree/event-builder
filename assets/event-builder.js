@@ -449,20 +449,20 @@ define('event-builder/models/event', ['exports', 'ember-data'], function (export
   exports['default'] = _emberData['default'].Model.extend({
     eventTitle: _emberData['default'].attr('string'),
     eventType: _emberData['default'].attr('string'),
-    eventDate: _emberData['default'].attr('date')
+    eventDate: _emberData['default'].attr('date'),
+    user: _emberData['default'].belongsTo('user'),
+    editable: _emberData['default'].attr('boolean')
   });
 });
-// user: DS.belongsTo('user'),
-// editable: DS.attr('boolean')
 define('event-builder/models/events', ['exports', 'ember-data'], function (exports, _emberData) {
   exports['default'] = _emberData['default'].Model.extend({
     eventTitle: _emberData['default'].attr('string'),
     eventType: _emberData['default'].attr('string'),
-    eventDate: _emberData['default'].attr('date')
+    eventDate: _emberData['default'].attr('date'),
+    user: _emberData['default'].belongsTo('user'),
+    editable: _emberData['default'].attr('boolean')
   });
 });
-// user: DS.belongsTo('user'),
-// editable: DS.attr('boolean')
 define('event-builder/models/user', ['exports', 'ember-data'], function (exports, _emberData) {
   exports['default'] = _emberData['default'].Model.extend({
     email: _emberData['default'].attr('string')
