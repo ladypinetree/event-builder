@@ -551,6 +551,24 @@ define('event-builder/tests/integration/components/sign-up-form-test.jshint.lint
     assert.ok(true, 'integration/components/sign-up-form-test.js should pass jshint.');
   });
 });
+define('event-builder/tests/models/event.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | models/event.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/event.js should pass jshint.');
+  });
+});
+define('event-builder/tests/models/events.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | models/events.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/events.js should pass jshint.');
+  });
+});
 define('event-builder/tests/models/user.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
@@ -594,6 +612,15 @@ define('event-builder/tests/routes/change-password.jshint.lint-test', ['exports'
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/change-password.js should pass jshint.');
+  });
+});
+define('event-builder/tests/routes/event.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | routes/event.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/event.js should pass jshint.');
   });
 });
 define('event-builder/tests/routes/events.jshint.lint-test', ['exports'], function (exports) {
@@ -810,6 +837,28 @@ define('event-builder/tests/unit/models/auth-test.jshint.lint-test', ['exports']
     assert.ok(true, 'unit/models/auth-test.js should pass jshint.');
   });
 });
+define('event-builder/tests/unit/models/event-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('event', 'Unit | Model | event', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('event-builder/tests/unit/models/event-test.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | unit/models/event-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/event-test.js should pass jshint.');
+  });
+});
 define('event-builder/tests/unit/models/user-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleForModel)('user', 'Unit | Model | user', {
@@ -873,6 +922,27 @@ define('event-builder/tests/unit/routes/change-password-test.jshint.lint-test', 
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/change-password-test.js should pass jshint.');
+  });
+});
+define('event-builder/tests/unit/routes/event-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:event', 'Unit | Route | event', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('event-builder/tests/unit/routes/event-test.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | unit/routes/event-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/event-test.js should pass jshint.');
   });
 });
 define('event-builder/tests/unit/routes/events-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
