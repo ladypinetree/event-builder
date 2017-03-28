@@ -10,5 +10,9 @@ export default Ember.Route.extend({
     event.save()
     .then(() => this.transitionTo('events'));
   },
+  cancel () {
+    history.back();
+  }
+
 }
 });
