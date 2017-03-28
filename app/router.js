@@ -12,6 +12,7 @@ Router.map(function () {
   this.route('users');
   this.route('events');
   this.route('event', { path: '/events/:event_id' });
+  this.route('new');
 });
 
 export default Router;
