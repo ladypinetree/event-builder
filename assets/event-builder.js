@@ -99,6 +99,21 @@ define('event-builder/components/navbar-header', ['exports', 'ember'], function 
     classNames: ['navbar-header']
   });
 });
+define('event-builder/components/new-event-form', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Component.extend({
+    actions: {
+      save: function save() {
+        var date = new Date(this.get('event.eventDate'));
+        this.set('event.eventDate', date);
+        this.sendAction('save', this.get('event'));
+      },
+      cancel: function cancel() {
+        this.get('event').rollbackAttributes();
+        this.sendAction('cancel');
+      }
+    }
+  });
+});
 define('event-builder/components/password-confirmation-input', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: 'div',
@@ -449,11 +464,11 @@ define('event-builder/models/event', ['exports', 'ember-data'], function (export
   exports['default'] = _emberData['default'].Model.extend({
     eventTitle: _emberData['default'].attr('string'),
     eventType: _emberData['default'].attr('string'),
-    eventDate: _emberData['default'].attr('date'),
-    user: _emberData['default'].belongsTo('user'),
-    editable: _emberData['default'].attr('boolean')
+    eventDate: _emberData['default'].attr('date')
   });
 });
+// user: DS.belongsTo('user'),
+// editable: DS.attr('boolean')
 define('event-builder/models/events', ['exports', 'ember-data'], function (exports, _emberData) {
   exports['default'] = _emberData['default'].Model.extend({
     eventTitle: _emberData['default'].attr('string'),
@@ -484,6 +499,7 @@ define('event-builder/router', ['exports', 'ember', 'event-builder/config/enviro
     this.route('users');
     this.route('events');
     this.route('event', { path: '/events/:event_id' });
+    this.route('new');
   });
 
   exports['default'] = Router;
@@ -577,11 +593,45 @@ define('event-builder/routes/events', ['exports', 'ember'], function (exports, _
   exports['default'] = _ember['default'].Route.extend({
     model: function model() {
       return this.get('store').findAll('event');
+    },
+
+    actions: {
+      toggleEventDone: function toggleEventDone(event) {
+        event.toggleProperty('done');
+        return event.save();
+      },
+
+      deleteEvent: function deleteEvent(event) {
+        return event.destroyRecord();
+      },
+
+      createEvent: function createEvent(data) {
+        var event = this.get('store').createRecord('event', data);
+        return event.save();
+      }
+
     }
   });
 });
 define('event-builder/routes/index', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({});
+});
+define('event-builder/routes/new', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({
+    model: function model() {
+      return this.get('store').createRecord('event');
+    },
+    actions: {
+      createEvent: function createEvent(event) {
+        var _this = this;
+
+        console.log(event);
+        event.save().then(function () {
+          return _this.transitionTo('events');
+        });
+      }
+    }
+  });
 });
 define('event-builder/routes/sign-in', ['exports', 'ember', 'rsvp'], function (exports, _ember, _rsvp) {
   exports['default'] = _ember['default'].Route.extend({
@@ -744,6 +794,9 @@ define("event-builder/templates/components/my-application", ["exports"], functio
 define("event-builder/templates/components/navbar-header", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "lFCaUcAm", "block": "{\"statements\":[[\"append\",[\"unknown\",[\"hamburger-menu\"]],false],[\"text\",\"\\n\"],[\"block\",[\"link-to\"],[\"application\"],[[\"class\"],[\"navbar-brand\"]],0],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"Home\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "event-builder/templates/components/navbar-header.hbs" } });
 });
+define("event-builder/templates/components/new-event-form", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "13tTrIG4", "block": "{\"statements\":[[\"open-element\",\"form\",[]],[\"static-attr\",\"class\",\"form-group\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"save\"],[[\"on\"],[\"submit\"]]],[\"flush-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"id\",\"placeholder\",\"value\"],[\"eventTitle\",\"event title\",[\"get\",[\"event\",\"eventTitle\"]]]]],false],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"id\",\"placeholder\",\"value\"],[\"eventType\",\"event type\",[\"get\",[\"event\",\"eventType\"]]]]],false],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"date\",\"eventDate\",\"event date\",[\"get\",[\"event\",\"eventDate\"]]]]],false],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"type\",\"submit\"],[\"static-attr\",\"class\",\"btn btn-primary\"],[\"flush-element\"],[\"text\",\"\\n  Create\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-default\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"reset\"]],[\"flush-element\"],[\"text\",\"\\n  Cancel\\n\"],[\"close-element\"],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "event-builder/templates/components/new-event-form.hbs" } });
+});
 define("event-builder/templates/components/password-confirmation-input", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "/gSRzKti", "block": "{\"statements\":[[\"open-element\",\"label\",[]],[\"static-attr\",\"for\",\"password-confirmation\"],[\"flush-element\"],[\"text\",\"Password Confirmation\"],[\"close-element\"],[\"text\",\"\\n\"],[\"append\",[\"helper\",[\"input\"],null,[[\"type\",\"id\",\"placeholder\",\"value\"],[\"password\",\"password-confirmation\",\"Password Confirmation\",[\"get\",[\"password\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "event-builder/templates/components/password-confirmation-input.hbs" } });
 });
@@ -760,10 +813,13 @@ define("event-builder/templates/event", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "DznSl8b6", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"container\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h3\",[]],[\"flush-element\"],[\"text\",\" IT WORKS!\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h3\",[]],[\"flush-element\"],[\"text\",\" \"],[\"append\",[\"unknown\",[\"model\",\"eventTitle\"]],false],[\"text\",\" \"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\" Event Type: \"],[\"append\",[\"unknown\",[\"model\",\"eventType\"]],false],[\"text\",\" \"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"ul\",[]],[\"flush-element\"],[\"text\",\" Event Date: \"],[\"append\",[\"unknown\",[\"model\",\"eventDate\"]],false],[\"text\",\" \"],[\"close-element\"],[\"text\",\"\\n      \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"events\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"Back\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "event-builder/templates/event.hbs" } });
 });
 define("event-builder/templates/events", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template({ "id": "bSImBC2A", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"container\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Events List\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h3\",[]],[\"flush-element\"],[\"text\",\" IT WORKS!\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,2],[\"text\",\"  \"],[\"block\",[\"link-to\"],[\"index\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"Back\"]],\"locals\":[]},{\"statements\":[[\"append\",[\"unknown\",[\"event\",\"eventTitle\"]],false]],\"locals\":[]},{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"h3\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"event\",[\"get\",[\"event\"]]],null,1],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"event\"]}],\"hasPartials\":false}", "meta": { "moduleName": "event-builder/templates/events.hbs" } });
+  exports["default"] = Ember.HTMLBars.template({ "id": "SXjN6kDJ", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"container\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Events List\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h3\",[]],[\"flush-element\"],[\"text\",\" IT WORKS!\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"new\"],[[\"class\"],[\"btn btn-xs\"]],3],[\"text\",\"\\n\\n\"],[\"block\",[\"each\"],[[\"get\",[\"model\"]]],null,2],[\"text\",\"  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"br\",[]],[\"flush-element\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"index\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"Back\"]],\"locals\":[]},{\"statements\":[[\"append\",[\"unknown\",[\"event\",\"eventTitle\"]],false]],\"locals\":[]},{\"statements\":[[\"text\",\"  \"],[\"open-element\",\"h3\",[]],[\"flush-element\"],[\"block\",[\"link-to\"],[\"event\",[\"get\",[\"event\"]]],null,1],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-primary btn-xs\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"edit\"]],[\"flush-element\"],[\"text\",\"Edit\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"button\",[]],[\"static-attr\",\"class\",\"btn btn-danger btn-xs\"],[\"modifier\",[\"action\"],[[\"get\",[null]],\"delete\"]],[\"flush-element\"],[\"text\",\"Delete\"],[\"close-element\"],[\"text\",\"\\n\"]],\"locals\":[\"event\"]},{\"statements\":[[\"text\",\"Create Event\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "event-builder/templates/events.hbs" } });
 });
 define("event-builder/templates/index", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "9tXwNCaV", "block": "{\"statements\":[[\"open-element\",\"div\",[]],[\"static-attr\",\"class\",\"container\"],[\"flush-element\"],[\"text\",\"\\n  \"],[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Welcome to If You Build It!\"],[\"close-element\"],[\"text\",\"\\n  \"],[\"block\",[\"link-to\"],[\"events\"],null,0],[\"text\",\"\\n\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"unknown\",[\"outlet\"]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[{\"statements\":[[\"text\",\"Take a look at your events.\"]],\"locals\":[]}],\"hasPartials\":false}", "meta": { "moduleName": "event-builder/templates/index.hbs" } });
+});
+define("event-builder/templates/new", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template({ "id": "O58UE3uW", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"New Event\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"new-event-form\"],null,[[\"event\",\"save\"],[[\"get\",[\"model\"]],\"createEvent\"]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "event-builder/templates/new.hbs" } });
 });
 define("event-builder/templates/sign-in", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template({ "id": "eGSySG80", "block": "{\"statements\":[[\"open-element\",\"h2\",[]],[\"flush-element\"],[\"text\",\"Sign In\"],[\"close-element\"],[\"text\",\"\\n\\n\"],[\"append\",[\"helper\",[\"sign-in-form\"],null,[[\"submit\",\"reset\",\"credentials\"],[\"signIn\",\"reset\",[\"get\",[\"model\"]]]]],false],[\"text\",\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"blocks\":[],\"hasPartials\":false}", "meta": { "moduleName": "event-builder/templates/sign-in.hbs" } });
