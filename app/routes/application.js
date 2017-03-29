@@ -22,12 +22,20 @@ export default Ember.Route.extend({
       let unauthorized = reason.errors && reason.errors.some((error) =>
         error.status === '401'
       );
+      let notCreated = reason.errors && reason.errors.some((error) =>
+        error.status === '404'
+      );
 
       if (unauthorized) {
         this.get('flashMessages')
         .danger('You must be authenticated to access this page.');
         this.transitionTo('/sign-in');
-      } else {
+      }
+      if (notCreated) {
+        this.get('flashMessages')
+        .danger('This page does not exist');
+        this.transitionTo('events');
+      }else {
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');
       }

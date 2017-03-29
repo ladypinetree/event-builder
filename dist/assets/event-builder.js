@@ -541,10 +541,17 @@ define('event-builder/routes/application', ['exports', 'ember'], function (expor
         var unauthorized = reason.errors && reason.errors.some(function (error) {
           return error.status === '401';
         });
+        var notCreated = reason.errors && reason.errors.some(function (error) {
+          return error.status === '404';
+        });
 
         if (unauthorized) {
           this.get('flashMessages').danger('You must be authenticated to access this page.');
           this.transitionTo('/sign-in');
+        }
+        if (notCreated) {
+          this.get('flashMessages').danger('This page does not exist');
+          this.transitionTo('events');
         } else {
           this.get('flashMessages').danger('There was a problem. Please try again.');
         }
