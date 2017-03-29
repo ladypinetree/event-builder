@@ -35,7 +35,7 @@ export default Ember.Route.extend({
         this.get('flashMessages')
         .danger('This page does not exist');
         this.transitionTo('events');
-      }else {
+      } else {
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');
       }

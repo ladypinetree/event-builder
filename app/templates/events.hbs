@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Your Events</h2>
 
-  {{#link-to 'new' class="btn btn-xs"}}Create Event{{/link-to}}
+  {{#link-to 'new' class="btn btn-success btn-xs"}}Create Event{{/link-to}}
   <div class="event-index-wrapper">
   {{#each model as |event|}}
   {{event-index event=event deleteEvent='deleteEvent'}}
@@ -9,7 +9,11 @@
 </div>
   <br>
   <br>
-  {{#link-to 'application'}}Back{{/link-to}}
+  {{#link-to 'application' class="btn btn-m back-btn"}}Back{{/link-to}}
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
 
 {{outlet}}
