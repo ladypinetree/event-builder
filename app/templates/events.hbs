@@ -1,16 +1,13 @@
 <div class="container">
-  <h2>Events List</h2>
-  <h3> IT WORKS!</h3>
+  <h2>Your Events</h2>
+
   {{#link-to 'new' class="btn btn-xs"}}Create Event{{/link-to}}
-
+  <div class="event-index-wrapper">
   {{#each model as |event|}}
-  <h3>{{#link-to 'event' event}}{{event.eventTitle}}{{/link-to}}</h3>
-  <button class="btn btn-primary btn-xs" {{action 'edit'}}>Edit</button>
-  <button class="btn btn-danger btn-xs" {{action 'delete'}}>Delete</button>
+  {{event-index event=event deleteEvent='deleteEvent'}}
   {{/each}}
-  <br>
-  <br>
-  {{#link-to 'index'}}Back{{/link-to}}
 </div>
-
-{{outlet}}
+  <br>
+  <br>
+  {{#link-to 'application'}}Back{{/link-to}}
+</div>

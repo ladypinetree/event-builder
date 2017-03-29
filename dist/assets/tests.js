@@ -36,6 +36,15 @@ define('event-builder/tests/components/email-input.jshint.lint-test', ['exports'
     assert.ok(true, 'components/email-input.js should pass jshint.');
   });
 });
+define('event-builder/tests/components/event-index.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | components/event-index.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/event-index.js should pass jshint.');
+  });
+});
 define('event-builder/tests/components/hamburger-menu.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
@@ -299,6 +308,44 @@ define('event-builder/tests/integration/components/email-input-test.jshint.lint-
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/email-input-test.js should pass jshint.');
+  });
+});
+define('event-builder/tests/integration/components/event-index-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('event-index', 'Integration | Component | event index', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      'id': 'y1hZw6ac',
+      'block': '{"statements":[["append",["unknown",["event-index"]],false]],"locals":[],"named":[],"yields":[],"blocks":[],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template({
+      'id': 'FTFnyPwq',
+      'block': '{"statements":[["text","\\n"],["block",["event-index"],null,null,0],["text","  "]],"locals":[],"named":[],"yields":[],"blocks":[{"statements":[["text","      template block text\\n"]],"locals":[]}],"hasPartials":false}',
+      'meta': {}
+    }));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('event-builder/tests/integration/components/event-index-test.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | integration/components/event-index-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/event-index-test.js should pass jshint.');
   });
 });
 define('event-builder/tests/integration/components/hamburger-menu-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
@@ -623,6 +670,15 @@ define('event-builder/tests/routes/change-password.jshint.lint-test', ['exports'
     assert.ok(true, 'routes/change-password.js should pass jshint.');
   });
 });
+define('event-builder/tests/routes/edit.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | routes/edit.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/edit.js should pass jshint.');
+  });
+});
 define('event-builder/tests/routes/event.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
@@ -940,6 +996,27 @@ define('event-builder/tests/unit/routes/change-password-test.jshint.lint-test', 
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/change-password-test.js should pass jshint.');
+  });
+});
+define('event-builder/tests/unit/routes/edit-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:edit', 'Unit | Route | edit', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('event-builder/tests/unit/routes/edit-test.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | unit/routes/edit-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/edit-test.js should pass jshint.');
   });
 });
 define('event-builder/tests/unit/routes/event-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {

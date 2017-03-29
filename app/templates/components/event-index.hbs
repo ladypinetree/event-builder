@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>{{#link-to 'event' event}}{{event.eventTitle}}{{/link-to}}</h3>
+  <h3>{{#link-to 'edit' event class="btn btn-primary btn-xs"}}edit{{/link-to}}</h3>
+  <button class="btn btn-danger btn-xs" {{action 'deleteEvent'}}>Delete</button>
+  <br>
+  <br>
+</div>
+
+{{outlet}}
