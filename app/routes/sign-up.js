@@ -5,11 +5,17 @@ export default Ember.Route.extend({
   flashMessages: Ember.inject.service(),
 
   actions: {
+    cancel () {
+      history.back();
+    },
     signUp (credentials) {
       this.get('auth').signUp(credentials)
       .then(() => this.get('auth').signIn(credentials))
       .then(() => this.transitionTo('application'))
       .then(() => {
+        credentials.password = null;
+        credentials.email = null;
+        credentials.passwordConfirmation = null;
         this.get('flashMessages')
         .success('Successfully signed-up! You have also been signed-in.');
       })

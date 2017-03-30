@@ -5,6 +5,10 @@ export default Ember.Route.extend({
   flashMessages: Ember.inject.service(),
 
   actions: {
+    cancel () {
+      this.set('password', {});
+      history.back();
+    },
     changePassword (passwords) {
       this.get('auth').changePassword(passwords)
       .then(() => this.get('auth').signOut())
