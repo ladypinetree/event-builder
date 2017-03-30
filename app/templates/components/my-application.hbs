@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     {{navbar-header}}
 
@@ -21,8 +21,10 @@
     </div>
   </div>
 </nav>
-
-<h2 class="welcome-header">Welcome to Event Builder!</h2>
+<br>
+<br>
+<br>
+<h1 class="welcome-header">Welcome to Event Builder!</h1>
 
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}

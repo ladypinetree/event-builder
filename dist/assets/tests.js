@@ -715,6 +715,15 @@ define('event-builder/tests/routes/new.jshint.lint-test', ['exports'], function 
     assert.ok(true, 'routes/new.js should pass jshint.');
   });
 });
+define('event-builder/tests/routes/not-found.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | routes/not-found.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/not-found.js should pass jshint.');
+  });
+});
 define('event-builder/tests/routes/sign-in.jshint.lint-test', ['exports'], function (exports) {
   'use strict';
 
@@ -1101,6 +1110,27 @@ define('event-builder/tests/unit/routes/new-test.jshint.lint-test', ['exports'],
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/new-test.js should pass jshint.');
+  });
+});
+define('event-builder/tests/unit/routes/not-found-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:not-found', 'Unit | Route | not found', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('event-builder/tests/unit/routes/not-found-test.jshint.lint-test', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | unit/routes/not-found-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/not-found-test.js should pass jshint.');
   });
 });
 define('event-builder/tests/unit/routes/sign-in-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
