@@ -32,6 +32,13 @@ body {
   font-size: 25px;
 }
 
+.create-event-form {
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531,color-stop(0, rgb(255, 255, 255)),color-stop(0.7, rgb(226, 255, 244)),color-stop(1, rgb(219, 219, 219)));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
+  box-shadow:9px 4px 17px 0px rgba(52, 50, 50, 0.78);}
+
 .back-btn {
   background-color: white;
   color: black;
@@ -79,4 +86,18 @@ background-color: white;
 background: linear-gradient( #4375cc, #1f26a5 );
 color: white;
 border-radius: 100px;
+}
+
+#home-footer {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531,color-stop(0, rgb(255, 255, 255)),color-stop(0.7, rgb(226, 255, 244)),color-stop(1, rgb(219, 219, 219)));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
+  text-align: center;
 }
