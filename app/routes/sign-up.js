@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 
   actions: {
     cancel () {
-      this.transitionTo('application');
+      history.back();
     },
     signUp (credentials) {
       this.get('auth').signUp(credentials)

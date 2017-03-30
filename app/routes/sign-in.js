@@ -11,7 +11,7 @@ export default Ember.Route.extend({
 
   actions: {
     cancel () {
-      this.transitionTo('application');
+      history.back();
     },
     signIn (credentials) {
       return this.get('auth').signIn(credentials)

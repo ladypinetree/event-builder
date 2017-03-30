@@ -699,7 +699,7 @@ define('event-builder/routes/sign-in', ['exports', 'ember', 'rsvp'], function (e
 
     actions: {
       cancel: function cancel() {
-        this.transitionTo('application');
+        history.back();
       },
       signIn: function signIn(credentials) {
         var _this = this;
@@ -722,7 +722,7 @@ define('event-builder/routes/sign-up', ['exports', 'ember'], function (exports, 
 
     actions: {
       cancel: function cancel() {
-        this.transitionTo('application');
+        history.back();
       },
       signUp: function signUp(credentials) {
         var _this = this;
