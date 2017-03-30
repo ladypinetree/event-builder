@@ -25,10 +25,17 @@
 <br>
 <br>
 <h1 class="welcome-header">Welcome to Event Builder!</h1>
-
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
+{{#if isAuthenticated}}
+<h3 class="greeting-user"></h3>
+{{else}}
+<p class="welcome">
+  <h3 class="greeting-guest">Thanks for stopping by!</h3>
+  Please sign in to create an event. Please check back often as we continue to add features.
+</p>
+{{/if}}
 
 <div class="col-md-8 col-md-offset-2">
   {{outlet}}

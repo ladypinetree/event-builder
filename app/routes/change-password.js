@@ -6,6 +6,7 @@ export default Ember.Route.extend({
 
   actions: {
     cancel () {
+      this.set('password', {});
       history.back();
     },
     changePassword (passwords) {

@@ -6,7 +6,6 @@ export default Ember.Route.extend({
   },
   actions: {
   editEvent (event) {
-    console.log(event);
     event.save()
     .then(() => this.transitionTo('events'));
   },
