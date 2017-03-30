@@ -1,7 +1,7 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
-@import url(https://fonts.googleapis.com/css?family=Fascinate+Inline);
+@import url(https://fonts.googleapis.com/css?family=Fascinate+Inline|Megrim);
 
 
 body {
@@ -9,6 +9,7 @@ body {
 }
 
 .welcome-header {
+  font-family: 'Megrim', cursive;
 }
 
 .event-title-link:hover {

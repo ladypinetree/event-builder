@@ -10,6 +10,9 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    cancel () {
+      this.transitionTo('application');
+    },
     signIn (credentials) {
       return this.get('auth').signIn(credentials)
       .then(() => this.transitionTo('application'))

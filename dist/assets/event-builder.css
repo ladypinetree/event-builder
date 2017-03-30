@@ -6,7 +6,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
-@import url(https://fonts.googleapis.com/css?family=Fascinate+Inline);
+@import url(https://fonts.googleapis.com/css?family=Fascinate+Inline|Megrim);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6184,6 +6184,9 @@ button.close {
 
 body {
   font-family: 'Poiret One', cursive; }
+
+.welcome-header {
+  font-family: 'Megrim', cursive; }
 
 .event-title-link:hover {
   color: #2d64ef;

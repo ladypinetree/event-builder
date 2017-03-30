@@ -5,6 +5,9 @@ export default Ember.Route.extend({
   flashMessages: Ember.inject.service(),
 
   actions: {
+    cancel () {
+      this.transitionTo('application');
+    },
     signUp (credentials) {
       this.get('auth').signUp(credentials)
       .then(() => this.get('auth').signIn(credentials))
