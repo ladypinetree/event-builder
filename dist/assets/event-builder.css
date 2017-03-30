@@ -6188,6 +6188,14 @@ body {
 .welcome-header {
   font-family: 'Megrim', cursive; }
 
+.event-box {
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531, color-stop(0, white), color-stop(0.7, #e2fff4), color-stop(1, #dbdbdb));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px, white 0%, #e2fff4 70%, #dbdbdb 100%);
+  background-image: -webkit-radial-gradient(circle 531px at 59px 147px, white 0%, #e2fff4 70%, #dbdbdb 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px, white 0%, #e2fff4 70%, #dbdbdb 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px, white 0%, #e2fff4 70%, #dbdbdb 100%);
+  box-shadow: 9px 4px 17px 0px rgba(52, 50, 50, 0.78); }
+
 .event-title-link:hover {
   color: #2d64ef;
   font-size: 25px; }

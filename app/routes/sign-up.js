@@ -13,6 +13,9 @@ export default Ember.Route.extend({
       .then(() => this.get('auth').signIn(credentials))
       .then(() => this.transitionTo('application'))
       .then(() => {
+        credentials.password = null;
+        credentials.email = null;
+        credentials.passwordConfirmation = null;
         this.get('flashMessages')
         .success('Successfully signed-up! You have also been signed-in.');
       })
