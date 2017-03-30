@@ -1,16 +1,21 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
-@import url(path/to/font-awesome/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Fascinate+Inline);
+
 
 body {
   font-family: 'Poiret One', cursive;
+}
+
+.welcome-header {
 }
 
 .event-title-link:hover {
   color: #2d64ef;
   font-size: 25px;
 }
+
 .back-btn {
   background-color: white;
   color: black;
@@ -41,12 +46,13 @@ color: #d81737;
 border-color: #d81737;
 background-color: white;
 }
+
 .btn-delete:hover{
 background: linear-gradient( #f25f48, #ef152b );
 color: white;
 border-radius: 100px;
-
 }
+
 .btn-edit{
 color: #0643ad;
 border-color: #0643ad;

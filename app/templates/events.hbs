@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Your Events</h2>
 
-  {{#link-to 'new' class="btn create-btn btn-m"}}Create Event{{/link-to}}
+  {{#link-to 'new' class="btn btn-m create-btn"}}Create Event{{/link-to}}
   <div class="event-index-wrapper">
   {{#each model as |event|}}
   {{event-index event=event deleteEvent='deleteEvent'}}
