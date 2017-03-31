@@ -44,6 +44,11 @@ define('event-builder/components/change-password-form', ['exports', 'ember'], fu
 
     passwords: {},
 
+    init: function init() {
+      this._super.apply(this, arguments);
+      this.set('passwords', {});
+    },
+
     actions: {
       submit: function submit() {
         this.sendAction('submit', this.get('passwords'));
@@ -590,6 +595,7 @@ define('event-builder/routes/change-password', ['exports', 'ember'], function (e
         this.set('password', {});
         history.back();
       },
+
       changePassword: function changePassword(passwords) {
         var _this = this;
 
@@ -937,6 +943,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("event-builder/app")["default"].create({"name":"event-builder","version":"0.0.0+e6ee7b7a"});
+  require("event-builder/app")["default"].create({"name":"event-builder","version":"0.0.0+58630756"});
 }
 //# sourceMappingURL=event-builder.map
