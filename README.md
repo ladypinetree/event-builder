@@ -1,8 +1,9 @@
 # Event Builder
 
-## ERD, User Stories, Wireframes
+### ERD, User Stories, Wireframes
 https://www.evernote.com/l/AozltvpNfYJC6586hfKSEEPUxX_zC9EA1u8
 
+### About the application:
 Event Builder is a multi phase app that will feature 4 additional versions rolled out over the next several weeks. The application aims to help event owners keep track of due dates and contacts for planning items, while allowing them to share their event information with guests. The current application was built using a rails API with the goal of familiarizing the developer with Ember and the ideals of scalable feature based development.
 
 ### Technology I Used for Event Builder:
@@ -56,9 +57,9 @@ this.route('edit', { path: '/events/:event_id/edit' });
 - Create all CRUD, and separate index and single event show.
 
 #### V 1.1
-Add location to event-index using Google Maps 3rd party API.
-Add in another join table for event items with item, category, due date, contact info and notes.
-Make events and items private or public.
+- Add location to event-index using Google Maps 3rd party API.
+- Add in another join table for event items with item, category, due date, contact info and notes.
+- Make events and items private or public.
 
 #### V 1.2
 - Add in about page.
@@ -76,9 +77,14 @@ Make events and items private or public.
 - Allow users to save to do items to Google calendar.
 - Allow users to customize event listing appearance.
 
+Find my on LinkedIn
+
 
 This is the link to me User Stories, ERDs and Wireframes : https://www.evernote.com/l/AozltvpNfYJC6586hfKSEEPUxX_zC9EA1u8
-This is my app deployment: https://ladypinetree.github.io/event-builder/
-This is my link to the back end: https://fierce-thicket-93557.herokuapp.com/
-Here is the link to the front end Github: https://github.com/ladypinetree/event-builder
+This is my app deployment:
+https://ladypinetree.github.io/event-builder/
+This is my link to the back end:
+https://fierce-thicket-93557.herokuapp.com/
+Here is the link to the front end Github:
+https://github.com/ladypinetree/event-builder
 Here is the link to the back end Github: https://github.com/ladypinetree/event_builder_api
