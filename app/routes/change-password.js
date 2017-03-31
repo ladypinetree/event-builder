@@ -9,6 +9,7 @@ export default Ember.Route.extend({
       this.set('password', {});
       history.back();
     },
+
     changePassword (passwords) {
       this.get('auth').changePassword(passwords)
       .then(() => this.get('auth').signOut())
