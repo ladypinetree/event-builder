@@ -163,6 +163,11 @@ define('event-builder/components/sign-up-form', ['exports', 'ember'], function (
 
     credentials: {},
 
+    init: function init() {
+      this._super.apply(this, arguments);
+      this.set('credentials', {});
+    },
+
     actions: {
       submit: function submit() {
         this.sendAction('submit', this.get('credentials'));
