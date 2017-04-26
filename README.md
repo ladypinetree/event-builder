@@ -8,8 +8,8 @@ Event Builder is a multi phase app that will feature 4 additional versions rolle
 
 ### Technology I Used for Event Builder:
 - Rails
-- Bootstrap
 - Ember
+- Bootstrap
 - Sass
 - Handlebars
 
@@ -28,7 +28,7 @@ this.route('edit', { path: '/events/:event_id/edit' });
 
 ### To build my site I used:
 - I used rails to build an API.
-- We created an API using 2 related models, one is the User, the other is Events
+- I created an API using 2 related models, one is the User, the other is Events
 - The User can:
 - Create an event.
 - Index their events.
@@ -56,24 +56,25 @@ this.route('edit', { path: '/events/:event_id/edit' });
 - Build out user authentication.
 - Create all CRUD, and separate index and single event show.
 
-#### V 1.1
-- Add location to event-index using Google Maps 3rd party API.
-- Add in another join table for event items with item, category, due date, contact info and notes.
-- Make events and items private or public.
-
-#### V 1.2
+#### V 1.1 (In Process):
+- Add in table for to do items.
+- Update CRUD to include to do items.
 - Add in about page.
-- Add in date calculator function for "to do items" that will return a suggested due date.
-- And in toggle complete for all to do items, and for events.
+- And in toggle complete for all to do items.
+- Scaffold category, due date, contact info and notes into to-do item table.
 - Add in event search by name/ category.
 - Sort user event index and to do items by date.
 
-#### V 1.3
+#### V 1.2:
+- Add location to event-index using Google Maps 3rd party API.
+- Make events and items private or public.
+
+#### V 1.3:
 - Add in yelp fusion API for event items, business contact information and location.
 - Allow owner to tag other users in to-do items.
 - Allow commenting.
 
-#### V 1.4
+#### V 1.4:
 - Allow users to save to do items to Google calendar.
 - Allow users to customize event listing appearance.
 
