@@ -1,26 +1,140 @@
 <div class="jumbotron jumbotron-container new-event">
 <form class="form-group" {{action 'save' on='submit'}}>
+<h4 class="event-form-header"> Event Details: </h4>
 {{input
 id="eventTitle"
-placeholder="event title"
+placeholder="Event Title"
 value=event.eventTitle
 required="required"
 maxlength="100"}}
-
+<br>
 {{input
 id="eventType"
-placeholder="event type"
+placeholder="Event Type"
 value=event.eventType
 required="required"
 maxlength="100"}}
-
+<br>
 {{input type="date"
 id="eventDate"
-placeholder="event date"
+placeholder="Event Date"
 value=event.eventDate
 required="required"
 data-provide="datepicker"}}
+<br>
+<h4 class="todo-header"> My To Do List: </h4>
+<div class="row row1">
+  <div class="col-sm-3">{{input
+  id="todo1"
+  placeholder="To do item"
+  value=event.todo1
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo6"
+  placeholder="To do item"
+  value=event.todo6
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo11"
+  placeholder="To do item"
+  value=event.todo11
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo16"
+  placeholder="To do item"
+  value=event.todo16
+  maxlength="50"}}</div>
+</div>
+<div class="row row2">
+  <div class="col-sm-3">{{input
+  id="todo2"
+  placeholder="To do item"
+  value=event.todo2
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo7"
+  placeholder="To do item"
+  value=event.todo7
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo12"
+  placeholder="To do item"
+  value=event.todo12
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo17"
+  placeholder="To do item"
+  value=event.todo17
+  maxlength="50"}}</div>
+</div>
+<div class="row row3">
+  <div class="col-sm-3">{{input
+  id="todo3"
+  placeholder="To do item"
+  value=event.todo3
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo8"
+  placeholder="To do item"
+  value=event.todo8
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo13"
+  placeholder="To do item"
+  value=event.todo13
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo18"
+  placeholder="To do item"
+  value=event.todo18
+  maxlength="50"}}</div>
+</div>
+<div class="row row4">
+  <div class="col-sm-3">{{input
+  id="todo4"
+  placeholder="To do item"
+  value=event.todo4
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo9"
+  placeholder="To do item"
+  value=event.todo9
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo14"
+  placeholder="To do item"
+  value=event.todo14
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo19"
+  placeholder="To do item"
+  value=event.todo19
+  maxlength="50"}}</div>
+</div>
+<div class="row row5">
+  <div class="col-sm-3">{{input
+  id="todo5"
+  placeholder="To do item"
+  value=event.todo5
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo10"
+  placeholder="To do item"
+  value=event.todo10
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo15"
+  placeholder="To do item"
+  value=event.todo15
+  maxlength="50"}}</div>
+  <div class="col-sm-3">{{input
+  id="todo20"
+  placeholder="To do item"
+  value=event.todo20
+  maxlength="50"}}</div>
+</div>
 
+<br>
 <button type="submit" class="btn btn-primary">
   Save
 </button>
@@ -30,3 +144,6 @@ data-provide="datepicker"}}
 </button>
 </form>
 </div>
+<br>
+<br>
+<br>
