@@ -7,7 +7,9 @@
 body {
   font-family: 'Poiret One', cursive;
 }
-
+.header {
+  box-shadow:2px 2px 5px 0px rgba(50, 50, 50, 0.57);
+}
 .welcome-header {
   font-family: 'Megrim', cursive;
 }
@@ -18,11 +20,12 @@ body {
 
 
 .event-box {
-  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531,color-stop(0, rgb(255, 255, 255)),color-stop(0.7, rgb(226, 255, 244)),color-stop(1, rgb(219, 219, 219)));
-  background-image: -webkit-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
-  background-image: radial-gradient(circle 531px at 59px 147px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
-  background-image: -ms-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
-  box-shadow:9px 4px 17px 0px rgba(52, 50, 50, 0.78);}
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531,color-stop(0, rgb(255, 255, 255)),color-stop(0.7, rgb(210, 218, 220)),color-stop(1, rgb(214, 217, 218)));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
+  box-shadow:9px 4px 17px 0px rgba(52, 50, 50, 0.78);
+}
 
 .event-title-link {
   color: #718099;
@@ -82,11 +85,18 @@ border-radius: 100px;
 }
 
 .new-event {
-  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531,color-stop(0, rgb(255, 255, 255)),color-stop(0.7, rgb(226, 255, 244)),color-stop(1, rgb(219, 219, 219)));
-  background-image: -webkit-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
-  background-image: radial-gradient(circle 531px at 59px 147px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
-  background-image: -ms-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531,color-stop(0, rgb(255, 255, 255)),color-stop(0.7, rgb(210, 218, 220)),color-stop(1, rgb(214, 217, 218)));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
   box-shadow:9px 4px 17px 0px rgba(52, 50, 50, 0.78);
+}
+
+#navbar{
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531,color-stop(0, rgb(255, 255, 255)),color-stop(0.7, rgb(210, 218, 220)),color-stop(1, rgb(214, 217, 218)));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
 }
 
 #home-footer {
@@ -96,9 +106,10 @@ border-radius: 100px;
   bottom: 0;
   padding-top: 7px;
   padding-bottom: 7px;
-  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531,color-stop(0, rgb(255, 255, 255)),color-stop(0.7, rgb(226, 255, 244)),color-stop(1, rgb(219, 219, 219)));
-  background-image: -webkit-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
-  background-image: radial-gradient(circle 531px at 59px 147px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
-  background-image: -ms-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) 0%,rgb(226, 255, 244) 70%,rgb(219, 219, 219) 100%);
+  box-shadow:-3px -2px 5px 0px rgba(50, 50, 50, 0.57);
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531,color-stop(0, rgb(255, 255, 255)),color-stop(0.7, rgb(210, 218, 220)),color-stop(1, rgb(214, 217, 218)));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px,rgb(255, 255, 255) -0.5%,rgb(210, 218, 220) 70%,rgb(214, 217, 218) 100%);
   text-align: center;
 }

@@ -6185,6 +6185,9 @@ button.close {
 body {
   font-family: 'Poiret One', cursive; }
 
+.header {
+  box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.57); }
+
 .welcome-header {
   font-family: 'Megrim', cursive; }
 
@@ -6192,11 +6195,11 @@ body {
   font-family: 'Megrim', cursive; }
 
 .event-box {
-  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531, color-stop(0, white), color-stop(0.7, #e2fff4), color-stop(1, #dbdbdb));
-  background-image: -webkit-radial-gradient(59px 147px, 531px 531px, white 0%, #e2fff4 70%, #dbdbdb 100%);
-  background-image: -webkit-radial-gradient(circle 531px at 59px 147px, white 0%, #e2fff4 70%, #dbdbdb 100%);
-  background-image: radial-gradient(circle 531px at 59px 147px, white 0%, #e2fff4 70%, #dbdbdb 100%);
-  background-image: -ms-radial-gradient(59px 147px, 531px 531px, white 0%, #e2fff4 70%, #dbdbdb 100%);
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531, color-stop(0, white), color-stop(0.7, #d2dadc), color-stop(1, #d6d9da));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: -webkit-radial-gradient(circle 531px at 59px 147px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
   box-shadow: 9px 4px 17px 0px rgba(52, 50, 50, 0.78); }
 
 .event-title-link {
@@ -6252,12 +6255,19 @@ body {
   border-radius: 100px; }
 
 .new-event {
-  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531, color-stop(0, white), color-stop(0.7, #e2fff4), color-stop(1, #dbdbdb));
-  background-image: -webkit-radial-gradient(59px 147px, 531px 531px, white 0%, #e2fff4 70%, #dbdbdb 100%);
-  background-image: -webkit-radial-gradient(circle 531px at 59px 147px, white 0%, #e2fff4 70%, #dbdbdb 100%);
-  background-image: radial-gradient(circle 531px at 59px 147px, white 0%, #e2fff4 70%, #dbdbdb 100%);
-  background-image: -ms-radial-gradient(59px 147px, 531px 531px, white 0%, #e2fff4 70%, #dbdbdb 100%);
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531, color-stop(0, white), color-stop(0.7, #d2dadc), color-stop(1, #d6d9da));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: -webkit-radial-gradient(circle 531px at 59px 147px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
   box-shadow: 9px 4px 17px 0px rgba(52, 50, 50, 0.78); }
+
+#navbar {
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531, color-stop(0, white), color-stop(0.7, #d2dadc), color-stop(1, #d6d9da));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: -webkit-radial-gradient(circle 531px at 59px 147px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px, white -0.5%, #d2dadc 70%, #d6d9da 100%); }
 
 #home-footer {
   position: fixed;
@@ -6266,9 +6276,10 @@ body {
   bottom: 0;
   padding-top: 7px;
   padding-bottom: 7px;
-  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531, color-stop(0, white), color-stop(0.7, #e2fff4), color-stop(1, #dbdbdb));
-  background-image: -webkit-radial-gradient(59px 147px, 531px 531px, white 0%, #e2fff4 70%, #dbdbdb 100%);
-  background-image: -webkit-radial-gradient(circle 531px at 59px 147px, white 0%, #e2fff4 70%, #dbdbdb 100%);
-  background-image: radial-gradient(circle 531px at 59px 147px, white 0%, #e2fff4 70%, #dbdbdb 100%);
-  background-image: -ms-radial-gradient(59px 147px, 531px 531px, white 0%, #e2fff4 70%, #dbdbdb 100%);
+  box-shadow: -3px -2px 5px 0px rgba(50, 50, 50, 0.57);
+  background-image: -webkit-gradient(radial, 59 147, 0, 59 147, 531, color-stop(0, white), color-stop(0.7, #d2dadc), color-stop(1, #d6d9da));
+  background-image: -webkit-radial-gradient(59px 147px, 531px 531px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: -webkit-radial-gradient(circle 531px at 59px 147px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: radial-gradient(circle 531px at 59px 147px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
+  background-image: -ms-radial-gradient(59px 147px, 531px 531px, white -0.5%, #d2dadc 70%, #d6d9da 100%);
   text-align: center; }
